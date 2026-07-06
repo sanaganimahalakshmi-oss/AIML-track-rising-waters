@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Prediction Result</h1>
+
+    {% if result == "HIGH FLOOD RISK" %}
+        <h2 style="color:red;">⚠️ {{ result }}</h2>
+    {% else %}
+        <h2 style="color:green;">✅ {{ result }}</h2>
+    {% endif %}
+
+    <h3>Flood Probability: {{ probability }}%</h3>
+
+    <br>
+
+    <a href="/">
+        <button>Predict Again</button>
+    </a>
+
+</div>
+
+</body>
+</html>
